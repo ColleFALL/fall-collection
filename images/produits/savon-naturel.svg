@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#1f1c15"/>
+  <rect x="230" y="190" width="140" height="240" rx="30" fill="#161616" stroke="#d4af37" stroke-width="4"/>
+  <line x1="230" y1="280" x2="370" y2="280" stroke="#d4af37" stroke-width="3"/>
+  <text x="300" y="250" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="bold" fill="#d4af37">FC</text>
+  <text x="300" y="500" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#bdb8ab">Savon naturel FC</text>
+  <text x="300" y="530" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#7a7668">(remplacer par la photo du produit)</text>
+</svg>

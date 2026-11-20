@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produit — Fall Collection (FC)</title>
+  <meta name="description" content="Fiche produit Fall Collection : bénéfices, mode d'emploi et commande simple par WhatsApp." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/logo-fc.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/logo/logo-fc.png" alt="Logo Fall Collection" width="42" height="42"
+             onerror="if(this.src.indexOf('.png')>-1){this.src='images/logo/logo-fc.svg'}else{this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-initial',textContent:'FC'}))}" />
+        <span>Fall <span class="or-texte">Collection</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html" class="actif">Boutique</a>
+        <a href="booking.html">Prestations</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html" class="lien-panier">Panier <span class="badge-panier" data-panier-compte></span></a>
+      </nav>
+
+      <button class="burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a>
+      <a href="boutique.html" class="actif">Boutique</a>
+      <a href="booking.html">Prestations</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="panier.html" class="lien-panier">Panier <span class="badge-panier" data-panier-compte></span></a>
+    </nav>
+  </header>
+
+  <!-- ============ FICHE PRODUIT ============ -->
+  <section class="section">
+    <div class="container">
+      <a class="retour" href="boutique.html">← Retour à la boutique</a>
+      <div class="fiche" data-fiche>
+        <!-- Rempli automatiquement selon le produit demandé -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-contenu">
+        <div>
+          <h4>Fall Collection</h4>
+          <p>« La beauté au naturel. »<br />Cosmétiques capillaires naturels, fabriqués avec passion au Sénégal. 🇸🇳</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <div class="footer-liens">
+            <a href="index.html">Accueil</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="booking.html">Prestations</a>
+            <a href="apropos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+            <a href="panier.html">Panier</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>WhatsApp : <a data-wa href="#"><span data-whatsapp-affichage></span></a></p>
+          <p class="footer-reseaux" data-reseaux></p>
+        </div>
+      </div>
+      <p class="footer-bas">© <span data-annee></span> Fall Collection (FC) — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP FLOTTANT ============ -->
+  <a class="fab-whatsapp" data-wa data-wa-message="Bonjour FC 👋, j'ai une question sur un produit."
+     aria-label="Nous écrire sur WhatsApp" title="Nous écrire sur WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="data/config.js"></script>
+  <script src="data/products.js"></script>
+  <script src="js/panier.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* Fiche produit : ?produit=ID */
+    const fiche = document.querySelector("[data-fiche]");
+    const params = new URLSearchParams(window.location.search);
+    const produit = PRODUITS.find((p) => p.id === params.get("produit") && p.actif);
+
+    if (!produit) {
+      fiche.innerHTML = `
+        <h1>Produit introuvable 😕</h1>
+        <p>Ce produit n'existe pas ou n'est plus disponible.</p>
+        <a class="btn btn-or" href="boutique.html">Voir tous les produits</a>`;
+    } else {
+      document.title = `${produit.nom} — Fall Collection (FC)`;
+      fiche.innerHTML = `
+        <img src="${produit.image}" alt="${produit.imageAlt}"
+             onerror="this.onerror=null;this.src='${produit.image.replace(/\.jpg$/, ".svg")}'" />
+        <div class="contenu">
+          <h1>${produit.nom}</h1>
+          <span class="prix">${formaterPrix(produit.prix)}</span>
+          <p>${produit.description}</p>
+
+          <h2>Bénéfices ✨</h2>
+          <ul class="liste-check">
+            ${produit.benefices.map((b) => `<li>${b}</li>`).join("")}
+          </ul>
+
+          <h2>Mode d'emploi 📋</h2>
+          <ol class="liste-etapes">
+            ${produit.modeEmploi.map((e) => `<li>${e}</li>`).join("")}
+          </ol>
+
+          <h2>Commander 🛒</h2>
+          <div class="card-actions">
+            <button class="btn btn-or" id="btn-ajouter">🛒 Ajouter au panier</button>
+            <a class="btn btn-whatsapp" data-wa
+               data-wa-message="Bonjour FC 👋, je souhaite commander : ${produit.nom} (${formaterPrix(produit.prix)}).">
+              💬&nbsp; Commander directement par WhatsApp
+            </a>
+            <a class="btn btn-contour" href="panier.html">Voir mon panier</a>
+          </div>
+        </div>`;
+
+      document.getElementById("btn-ajouter").addEventListener("click", (e) => {
+        panierAjouter(produit.id);
+        const btn = e.currentTarget;
+        btn.textContent = "✓ Ajouté au panier !";
+        setTimeout(() => (btn.textContent = "🛒 Ajouter au panier"), 1000);
+      });
+    }
+  </script>
+
+</body>
+</html>

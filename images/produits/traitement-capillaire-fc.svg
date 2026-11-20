@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#1f1c15"/>
+  <rect x="215" y="200" width="170" height="230" rx="22" fill="#161616" stroke="#d4af37" stroke-width="4"/>
+  <rect x="240" y="150" width="120" height="60" rx="10" fill="#d4af37"/>
+  <rect x="240" y="290" width="120" height="90" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <text x="300" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="bold" fill="#d4af37">FC</text>
+  <text x="300" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#f0d98a">TRAITEMENT</text>
+  <text x="300" y="500" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#bdb8ab">Traitement capillaire FC</text>
+  <text x="300" y="530" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#7a7668">(remplacer par la photo du produit)</text>
+</svg>

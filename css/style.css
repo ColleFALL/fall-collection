@@ -1,0 +1,995 @@
+/* ============================================================
+   FC — FALL COLLECTION | style.css
+   Thème : noir & or, élégant et premium, mobile d'abord
+   ============================================================ */
+
+/* ---------- Variables ---------- */
+:root {
+  --noir: #0d0d0d;
+  --noir-2: #161616;
+  --noir-3: #1f1c15;
+  --or: #d4af37;
+  --or-clair: #f0d98a;
+  --or-fonce: #a8861f;
+  --blanc: #f8f6f0;
+  --gris: #bdb8ab;
+  --success: #2e9e5b;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  --radius: 14px;
+  --transi: all 0.25s ease;
+  --police: "Segoe UI", "Poppins", system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--police);
+  background: var(--noir);
+  color: var(--blanc);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--or);
+  text-decoration: none;
+  transition: var(--transi);
+}
+
+a:hover {
+  color: var(--or-clair);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.or {
+  color: var(--or);
+}
+
+.or-texte {
+  color: var(--or);
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transi);
+}
+
+.btn-or {
+  background: linear-gradient(135deg, var(--or), var(--or-fonce));
+  color: var(--noir);
+  border-color: var(--or);
+}
+
+.btn-or:hover {
+  filter: brightness(1.1);
+  color: var(--noir);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
+.btn-contour {
+  background: transparent;
+  color: var(--or);
+  border-color: var(--or);
+}
+
+.btn-contour:hover {
+  background: var(--or);
+  color: var(--noir);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.btn-whatsapp:hover {
+  background: #1fbe5a;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- En-tête ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.7rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--blanc);
+  letter-spacing: 0.5px;
+}
+
+.logo:hover {
+  color: var(--or-clair);
+}
+
+.logo-initial {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--or), var(--or-fonce));
+  color: var(--noir);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+
+
+.nav {
+  display: none;
+}
+
+.nav a {
+  color: var(--gris);
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+}
+
+.nav a.actif,
+.nav a:hover {
+  color: var(--or);
+}
+
+.burger {
+  display: block;
+  background: none;
+  border: 1px solid var(--or);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--or);
+  margin: 4px 0;
+  transition: var(--transi);
+}
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  background: var(--noir-2);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 0.8rem 0 1.2rem;
+}
+
+.nav-mobile.ouvert {
+  display: flex;
+  text-align: center;
+  gap: 0.2rem;
+}
+
+.nav-mobile a {
+  padding: 0.7rem;
+  color: var(--blanc);
+  font-weight: 500;
+}
+
+.nav-mobile a:hover,
+.nav-mobile a.actif {
+  color: var(--or);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* ---------- Section générique ---------- */
+.section {
+  padding: 3.2rem 0;
+}
+
+.section-titre {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  color: var(--blanc);
+}
+
+.section-titre::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--or), transparent);
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+}
+
+.section-sous-titre {
+  text-align: center;
+  color: var(--gris);
+  margin-bottom: 2.2rem;
+  font-size: 0.98rem;
+}
+
+/* ---------- Bannière (hero) ---------- */
+.hero {
+  position: relative;
+  padding: 4.3rem 0 4.3rem;
+  text-align: center;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(212, 175, 55, 0.16), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1), transparent 40%),
+    var(--noir);
+  overflow: hidden;
+}
+
+.hero-logo {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  border: 2px solid var(--or);
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--or);
+  background: var(--noir-2);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+}
+
+.hero h1 {
+  font-size: 2.1rem;
+  line-height: 1.25;
+  margin-bottom: 0.9rem;
+}
+
+.hero h1 .or {
+  display: block;
+}
+
+.hero p {
+  color: var(--gris);
+  max-width: 560px;
+  margin: 0 auto 1.8rem;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.28rem 0.95rem;
+  border: 1px solid var(--or);
+  border-radius: 999px;
+  color: var(--or);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+/* ---------- Avantages ---------- */
+.avantages {
+  background: var(--noir-2);
+}
+
+.avantages-grille {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.avantage {
+  background: var(--noir-3);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  text-align: center;
+  transition: var(--transi);
+}
+
+.avantage:hover {
+  border-color: var(--or);
+  transform: translateY(-4px);
+}
+
+.avantage-ico {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.avantage h3 {
+  color: var(--or);
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.avantage p {
+  color: var(--gris);
+  font-size: 0.9rem;
+}
+
+/* ---------- Grille produits ---------- */
+.produits-grille {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.carte-produit {
+  background: var(--noir-2);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transi);
+}
+
+.carte-produit:hover {
+  border-color: var(--or);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.carte-produit img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--noir-3);
+}
+
+.carte-produit .corps {
+  padding: 1rem 1.1rem 1.3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.carte-produit h3 {
+  font-size: 1.05rem;
+  color: var(--blanc);
+}
+
+.carte-produit .description {
+  color: var(--gris);
+  font-size: 0.88rem;
+  flex: 1;
+}
+
+.prix {
+  color: var(--or);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* ---------- Bandeau WhatsApp ---------- */
+.whatsapp-bandeau {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.14), rgba(212, 175, 55, 0.1)), var(--noir-2);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  text-align: center;
+  padding: 2.6rem 0;
+}
+
+.whatsapp-bandeau h2 {
+  margin-bottom: 0.5rem;
+}
+
+.whatsapp-bandeau p {
+  color: var(--gris);
+  margin-bottom: 1.4rem;
+}
+
+.numero {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ---------- Pied de page ---------- */
+.footer {
+  background: var(--noir-2);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 2.4rem 0 1.4rem;
+  margin-top: 3rem;
+}
+
+.footer-contenu {
+  display: grid;
+  gap: 1.8rem;
+  text-align: center;
+}
+
+.footer h4 {
+  color: var(--or);
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
+.footer p,
+.footer a {
+  color: var(--gris);
+  font-size: 0.92rem;
+}
+
+.footer a:hover {
+  color: var(--or);
+}
+
+.footer-liens {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.footer-reseaux {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-bas {
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  margin-top: 1.8rem;
+  padding-top: 1.1rem;
+  text-align: center;
+  color: var(--gris);
+  font-size: 0.82rem;
+}
+
+/* ---------- WhatsApp flottant ---------- */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  z-index: 90;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+}
+
+.fab-whatsapp:hover {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+.fab-whatsapp svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+/* ============================================================
+   TABLETTES
+   ============================================================ */
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .avantages-grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-contenu {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+  }
+
+  .footer-reseaux {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================================
+   ORDINATEURS
+   ============================================================ */
+@media (min-width: 960px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .section-titre {
+    font-size: 2.1rem;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .avantages-grille {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero {
+    padding: 6rem 0 5.5rem;
+  }
+
+  .hero-logo {
+    width: 112px;
+    height: 112px;
+    font-size: 2.4rem;
+  }
+}
+
+/* ============================================================
+   FORMULAIRES
+   ============================================================ */
+.formulaire {
+  display: grid;
+  gap: 1rem;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.champ label {
+  display: block;
+  color: var(--or);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.champ input,
+.champ select,
+.champ textarea {
+  width: 100%;
+  background: var(--noir-2);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 10px;
+  color: var(--blanc);
+  padding: 0.75rem 0.9rem;
+  font-family: var(--police);
+  font-size: 1rem;
+  transition: var(--transi);
+}
+
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus {
+  outline: none;
+  border-color: var(--or);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.champ textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.champ .aide {
+  color: var(--gris);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+
+.alerte {
+  max-width: 640px;
+  margin: 0 auto 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid var(--or);
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--or-clair);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+/* ============================================================
+   BOUTIQUE — cartes avec commande
+   ============================================================ */
+.carte-produit .btn {
+  width: 100%;
+}
+
+.card-actions {
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* ============================================================
+   FICHE PRODUIT
+   ============================================================ */
+.fiche {
+  display: grid;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.fiche img {
+  border-radius: var(--radius);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--noir-3);
+  width: 100%;
+}
+
+.fiche .contenu {
+  display: grid;
+  gap: 1rem;
+}
+
+.fiche h1 {
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+.fiche .prix {
+  font-size: 1.5rem;
+}
+
+.fiche h2 {
+  color: var(--or);
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+}
+
+.liste-check {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.liste-check li {
+  padding-left: 1.6rem;
+  position: relative;
+  color: var(--gris);
+  font-size: 0.95rem;
+}
+
+.liste-check li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--or);
+  font-weight: 700;
+}
+
+.liste-etapes {
+  list-style: none;
+  counter-reset: etape;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.liste-etapes li {
+  counter-increment: etape;
+  padding-left: 2.1rem;
+  position: relative;
+  color: var(--gris);
+  font-size: 0.95rem;
+}
+
+.liste-etapes li::before {
+  content: counter(etape);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--or), var(--or-fonce));
+  color: var(--noir);
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+}
+
+.retour {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  color: var(--gris);
+  font-size: 0.92rem;
+}
+
+.retour:hover {
+  color: var(--or);
+}
+
+@media (min-width: 800px) {
+  .fiche {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2.4rem;
+  }
+
+  .fiche h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* ============================================================
+   PANIER
+   ============================================================ */
+.table-panier {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.6rem;
+}
+
+.table-panier th {
+  color: var(--or);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.table-panier td {
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  color: var(--gris);
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.table-panier td:first-child {
+  color: var(--blanc);
+  font-weight: 600;
+}
+
+.table-panier .td-prix {
+  color: var(--or);
+  white-space: nowrap;
+}
+
+.panier-recap {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  background: var(--noir-2);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.3rem;
+}
+
+.panier-recap .ligne {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  color: var(--gris);
+}
+
+.panier-recap .ligne.total {
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  margin-top: 0.6rem;
+  padding-top: 0.8rem;
+  color: var(--or);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.panier-vide {
+  text-align: center;
+  color: var(--gris);
+  padding: 2.5rem 0;
+}
+
+@media (max-width: 640px) {
+  .table-panier th:nth-child(2),
+  .table-panier td:nth-child(2) {
+    display: none;
+  }
+}
+
+/* ============================================================
+   PRESTATIONS (booking)
+   ============================================================ */
+.prestations-grille {
+  display: grid;
+  gap: 1.1rem;
+  margin-bottom: 2.4rem;
+}
+
+.carte-prestation {
+  background: var(--noir-2);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: var(--transi);
+}
+
+.carte-prestation:hover {
+  border-color: var(--or);
+}
+
+.carte-prestation .ico {
+  font-size: 1.6rem;
+}
+
+.carte-prestation h3 {
+  color: var(--blanc);
+  font-size: 1.05rem;
+}
+
+.carte-prestation p {
+  color: var(--gris);
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
+.carte-prestation .meta {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+.carte-prestation .meta span {
+  font-size: 0.8rem;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  color: var(--or);
+}
+
+@media (min-width: 800px) {
+  .prestations-grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   BADGE PANIER dans la navigation
+   ============================================================ */
+.lien-panier {
+  position: relative;
+}
+
+.badge-panier {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--or), var(--or-fonce));
+  color: var(--noir);
+  font-size: 0.72rem;
+  font-weight: 800;
+  vertical-align: top;
+  margin-left: 2px;
+}
+
+/* ============================================================
+   HERO AVEC VISUEL (affiche produit)
+   ============================================================ */
+.hero-contenu {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: var(--shadow);
+}
+
+/* Logo du hero : quand c'est l'image réel du logo, on retire le cercle en double */
+img.hero-logo {
+  border: none;
+  background: transparent;
+  object-fit: contain;
+  padding: 0;
+}
+
+@media (min-width: 960px) {
+  .hero-contenu {
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+  }
+
+  .hero-texte {
+    text-align: left;
+  }
+
+  .hero-texte .hero-logo {
+    margin-left: 0;
+    width: 130px;
+    height: 130px;
+  }
+
+  .hero-texte p {
+    margin-inline: 0;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  /* Titres alignés à gauche dans les sections où .aligne-gauche est présent */
+  .aligne-gauche .section-titre,
+  .aligne-gauche .section-sous-titre {
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   IMAGE DANS LA PAGE À PROPOS
+   ============================================================ */
+.apropos-fig {
+  margin: 0 auto 1.8rem;
+  max-width: 420px;
+}
+
+.apropos-fig img {
+  border-radius: var(--radius);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: var(--shadow);
+  width: 100%;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon panier — Fall Collection (FC)</title>
+  <meta name="description" content="Récapitulatif de votre commande Fall Collection et envoi par WhatsApp." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/logo-fc.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/logo/logo-fc.png" alt="Logo Fall Collection" width="42" height="42"
+             onerror="if(this.src.indexOf('.png')>-1){this.src='images/logo/logo-fc.svg'}else{this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-initial',textContent:'FC'}))}" />
+        <span>Fall <span class="or-texte">Collection</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="booking.html">Prestations</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html" class="lien-panier actif">Panier <span class="badge-panier" data-panier-compte></span></a>
+      </nav>
+
+      <button class="burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a>
+      <a href="boutique.html">Boutique</a>
+      <a href="booking.html">Prestations</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="panier.html" class="lien-panier actif">Panier <span class="badge-panier" data-panier-compte></span></a>
+    </nav>
+  </header>
+
+  <!-- ============ PANIER + COMMANDE ============ -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-titre">Mon panier</h1>
+      <p class="section-sous-titre">Vérifiez votre commande, puis envoyez-la sur WhatsApp en un clic</p>
+
+      <div id="zone-panier">
+        <!-- Rempli par panier.js -->
+      </div>
+
+      <form class="formulaire" id="form-commande" novalidate>
+        <div class="champ">
+          <label for="nom">Votre nom et prénom</label>
+          <input id="nom" name="nom" type="text" placeholder="Ex : Aminata Fall" required />
+        </div>
+
+        <div class="champ">
+          <label for="telephone">Votre numéro de téléphone (WhatsApp si possible)</label>
+          <input id="telephone" name="telephone" type="tel" inputmode="tel" placeholder="Ex : 77 123 45 67" required />
+        </div>
+
+        <div class="champ">
+          <label for="adresse">Adresse de livraison (quartier, repère)</label>
+          <input id="adresse" name="adresse" type="text" placeholder="Ex : Sacré-Cœur 3, près de la pharmacie" required />
+        </div>
+
+        <div class="champ">
+          <label for="zone">Zone de livraison</label>
+          <select id="zone" name="zone" required></select>
+          <p class="aide" id="aide-zone"></p>
+        </div>
+
+        <div class="champ">
+          <label for="paiement">Moyen de paiement souhaité</label>
+          <select id="paiement" name="paiement" required>
+            <option value="Wave">Wave</option>
+            <option value="Orange Money">Orange Money</option>
+            <option value="Cash à la livraison">Cash à la livraison</option>
+          </select>
+        </div>
+
+        <div class="panier-recap">
+          <div class="ligne"><span>Sous-total produits</span><span id="recap-sous-total"></span></div>
+          <div class="ligne"><span>Frais de livraison</span><span id="recap-livraison"></span></div>
+          <div class="ligne total"><span>Total à payer</span><span id="recap-total"></span></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-whatsapp">💬&nbsp; Envoyer la commande sur WhatsApp</button>
+          <a class="btn btn-contour" href="boutique.html">Continuer mes achats</a>
+        </div>
+        <p class="aide" style="text-align:center;">
+          Un message WhatsApp pré-rempli s'ouvrira avec le récapitulatif complet.
+          Nous vous confirmons ensuite le paiement (Wave / Orange Money) ou la livraison.
+        </p>
+      </form>
+
+      <!-- Confirmation après envoi -->
+      <div id="confirmation" style="display:none; text-align:center; padding:2rem 0;">
+        <h2 class="section-titre">✅ Commande envoyée !</h2>
+        <p class="section-sous-titre">
+          Votre récapitulatif a été ouvert dans WhatsApp — appuyez simplement sur « Envoyer ».
+          Nous vous confirmons dans les plus brefs délais. Merci de votre confiance 💛
+        </p>
+        <a class="btn btn-or" href="boutique.html">Retour à la boutique</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-contenu">
+        <div>
+          <h4>Fall Collection</h4>
+          <p>« La beauté au naturel. »<br />Cosmétiques capillaires naturels, fabriqués avec passion au Sénégal. 🇸🇳</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <div class="footer-liens">
+            <a href="index.html">Accueil</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="booking.html">Prestations</a>
+            <a href="apropos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+            <a href="panier.html">Panier</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>WhatsApp : <a data-wa href="#"><span data-whatsapp-affichage></span></a></p>
+          <p class="footer-reseaux" data-reseaux></p>
+        </div>
+      </div>
+      <p class="footer-bas">© <span data-annee></span> Fall Collection (FC) — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="data/config.js"></script>
+  <script src="data/products.js"></script>
+  <script src="js/panier.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const zonePanier = document.getElementById("zone-panier");
+    const form = document.getElementById("form-commande");
+    const selectZone = document.getElementById("zone");
+
+    /* ----- Zones de livraison dans le select ----- */
+    const toutesZones = [...CONFIG.zonesLivraison, CONFIG.enlevement];
+    selectZone.innerHTML = toutesZones
+      .map((z) => `<option value="${z.id}">${z.label} — ${z.frais === 0 ? "gratuit" : formaterPrix(z.frais)}</option>`)
+      .join("");
+
+    function zoneChoisie() {
+      return toutesZones.find((z) => z.id === selectZone.value);
+    }
+
+    /* ----- Affichage du panier ----- */
+    function afficherPanier() {
+      const articles = panierArticles();
+
+      if (articles.length === 0) {
+        form.style.display = "none";
+        zonePanier.innerHTML = `
+          <div class="panier-vide">
+            <p style="font-size:2.4rem;">🛒</p>
+            <h2>Votre panier est vide</h2>
+            <p>Découvrez nos produits naturels et remplissez votre panier en quelques clics.</p>
+            <a class="btn btn-or" href="boutique.html" style="margin-top:1rem;">Voir la boutique</a>
+          </div>`;
+        return;
+      }
+
+      form.style.display = "";
+      zonePanier.innerHTML = `
+        <div style="overflow-x:auto;">
+          <table class="table-panier">
+            <thead>
+              <tr><th>Produit</th><th>Prix</th><th>Quantité</th><th style="text-align:right;">Total</th></tr>
+            </thead>
+            <tbody>
+              ${articles
+                .map(
+                  (a) => `
+                <tr>
+                  <td>${a.produit.nom}</td>
+                  <td class="td-prix prix-col">${formaterPrix(a.produit.prix)}</td>
+                  <td>
+                    <div class="bouton-quantite">
+                      <button type="button" data-moins="${a.produit.id}" aria-label="Diminuer">−</button>
+                      <span>${a.qte}</span>
+                      <button type="button" data-plus="${a.produit.id}" aria-label="Augmenter">+</button>
+                    </div>
+                  </td>
+                  <td class="td-prix" style="text-align:right;">${formaterPrix(a.produit.prix * a.qte)}</td>
+                </tr>`
+                )
+                .join("")}
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align:right;">
+          <button type="button" class="btn btn-contour" id="btn-vider" style="padding:0.5rem 1.1rem; font-size:0.85rem;">🗑 Vider le panier</button>
+        </p>`;
+      majRecap();
+    }
+
+    /* ----- Récapitulatif (sous-total, livraison, total) ----- */
+    function majRecap() {
+      const st = panierSousTotal();
+      const frais = zoneChoisie() ? zoneChoisie().frais : 0;
+      document.getElementById("recap-sous-total").textContent = formaterPrix(st);
+      document.getElementById("recap-livraison").textContent =
+        frais === 0 ? "Gratuit" : formaterPrix(frais);
+      document.getElementById("recap-total").textContent = formaterPrix(st + frais);
+      document.getElementById("aide-zone").textContent =
+        "Les frais exacts sont confirmés avant l'envoi. Enlèvement possible sur place.";
+    }
+
+    /* ----- Interactions : quantités, zone, vider ----- */
+    zonePanier.addEventListener("click", (e) => {
+      const moins = e.target.closest("[data-moins]");
+      const plus = e.target.closest("[data-plus]");
+      if (moins) {
+        const art = panierArticles().find((a) => a.produit.id === moins.dataset.moins);
+        panierDefinir(moins.dataset.moins, art ? art.qte - 1 : 0);
+      } else if (plus) {
+        panierAjouter(plus.dataset.plus);
+      } else if (e.target.matches("#btn-vider")) {
+        panierVider();
+      } else {
+        return;
+      }
+      afficherPanier();
+    });
+
+    selectZone.addEventListener("change", majRecap);
+
+    /* ----- Envoi de la commande sur WhatsApp ----- */
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (panierArticles().length === 0) return;
+
+      const client = {
+        nom: form.nom.value.trim() || "(non précisé)",
+        telephone: form.telephone.value.trim() || "(non précisé)",
+        adresse: form.adresse.value.trim() || "(non précisé)",
+        zone: selectZone.value,
+        paiement: form.paiement.value,
+      };
+
+      envoyerWhatsApp(messageCommande(client));
+      panierVider();
+      form.style.display = "none";
+      document.getElementById("confirmation").style.display = "";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    afficherPanier();
+  </script>
+
+</body>
+</html>
